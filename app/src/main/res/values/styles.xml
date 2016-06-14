@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Pad Item Style -->
+    <style name="PadItem" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textSize">23sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
 </resources>

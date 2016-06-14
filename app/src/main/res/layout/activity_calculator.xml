@@ -3,10 +3,317 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="az.simplecalc.Calculator">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/input_area"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.7"
+            android:background="@color/input_pad_background"
+            android:paddingEnd="30dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textView"
+                android:layout_alignParentEnd="true"
+                tools:text="20 x 10 + 50"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                tools:text="250"
+                android:textColor="@android:color/white"
+                android:textSize="110sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/equals_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="AC" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/equals_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="+/-" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/equals_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="%" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/operators_pad_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="/" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="7" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="8" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="9" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/operators_pad_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="x" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="4" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="5" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="6" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/operators_pad_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="+" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="1" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="2" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="3" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/operators_pad_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="-" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="0" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/numbers_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="," />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@color/equals_background">
+
+                <TextView
+                    style="@style/PadItem"
+                    tools:text="=" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
