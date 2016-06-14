@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Pad Colors -->
+    <color name="input_pad_background">#333333</color>
+    <color name="operators_pad_background">#3b978a</color>
+    <color name="numbers_background">#6ecabd</color>
+    <color name="equals_background">#81d1c5</color>
 </resources>
