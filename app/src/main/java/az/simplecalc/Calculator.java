@@ -131,7 +131,7 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
                 mCalculatorController.onOperatorAdd(getString(R.string.comma));
                 break;
             case R.id.ac_button:
-                mCalculatorController.onClearsExpression();
+                mCalculatorController.onClearExpression();
                 break;
             case R.id.equals_button:
                 mCalculatorController.onCalculateResult();
