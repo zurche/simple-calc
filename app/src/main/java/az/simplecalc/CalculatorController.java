@@ -74,11 +74,12 @@ public class CalculatorController {
 
         String stringResult;
 
+        //TODO: FIX ISSUE WITH SCI NOTATION
         if (isValueInteger(doubleResult)) {
             int roundedValue = (int) Math.round(doubleResult);
             stringResult = String.valueOf(roundedValue);
         } else {
-            stringResult = String.valueOf(doubleResult);
+            stringResult = Double.toString(doubleResult);
         }
 
         mCalculatorScreenActions.showResult(stringResult);
