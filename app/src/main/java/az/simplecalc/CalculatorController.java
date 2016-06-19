@@ -11,10 +11,13 @@ import java.util.List;
  */
 public class CalculatorController {
 
+    private static final String STRING_COMMA = ".";
     private List<Character> validOperators = Arrays.asList('+', '-', '/', '*');
+    private List<Character> validNumbers = Arrays.asList('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
 
     private final CalculatorScreenActions mCalculatorScreenActions;
     private String mCurrentStringExpression;
+
 
     public CalculatorController(CalculatorScreenActions calculatorScreenActions) {
         mCalculatorScreenActions = calculatorScreenActions;
@@ -22,16 +25,36 @@ public class CalculatorController {
     }
 
     public void onOperatorAdd(String value) {
+        boolean isCommaAddedToExpression = false;
+
         if (isValueAnOperator(value) && mCurrentStringExpression.length() > 0) {
             char lastCharacterOfExpression = mCurrentStringExpression.charAt(mCurrentStringExpression.length() - 1);
 
             if (isValueAnOperator(String.valueOf(lastCharacterOfExpression))) {
                 clearLastCharOfExpression();
             }
+        } else if (value.equals(STRING_COMMA)) {
+            char[] expressionArray = mCurrentStringExpression.toCharArray();
+            for (char c : expressionArray) {
+                if (c == STRING_COMMA.toCharArray()[0]) {
+                    isCommaAddedToExpression = true;
+                }
+                if (validOperators.contains(c)) {
+                    isCommaAddedToExpression = false;
+                }
+            }
+
+            // If las character of expression is either a number or an operator, do not add the comma to the expression.
+            char lastCharacterOfExpression = mCurrentStringExpression.charAt(mCurrentStringExpression.length() - 1);
+            if (validOperators.contains(lastCharacterOfExpression) || validNumbers.contains(lastCharacterOfExpression)) {
+                isCommaAddedToExpression = true;
+            }
         }
 
-        mCurrentStringExpression += value;
-        mCalculatorScreenActions.updateCurrentExpression(mCurrentStringExpression);
+        if (!isCommaAddedToExpression) {
+            mCurrentStringExpression += value;
+            mCalculatorScreenActions.updateCurrentExpression(mCurrentStringExpression);
+        }
     }
 
     public void onClearExpression() {
@@ -59,6 +82,7 @@ public class CalculatorController {
         }
 
         mCalculatorScreenActions.showResult(stringResult);
+        mCurrentStringExpression = stringResult;
     }
 
     private boolean isValueAnOperator(String value) {

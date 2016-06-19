@@ -20,5 +20,6 @@
     <string name="minus">-</string>
     <string name="zero">0</string>
     <string name="comma">,</string>
+    <string name="comma_expression">.</string>
     <string name="equals">=</string>
 </resources>
