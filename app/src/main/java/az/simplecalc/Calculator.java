@@ -57,7 +57,6 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
     @BindView(R.id.expression_result)
     TextView expression_result;
 
-    private String mCurrentStringExpression;
     private CalculatorController mCalculatorController;
 
     @Override
@@ -70,8 +69,6 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
         ButterKnife.bind(this);
 
         mCalculatorController = new CalculatorController(this);
-
-        mCurrentStringExpression = "";
     }
 
     @OnClick({R.id.zero_button,
