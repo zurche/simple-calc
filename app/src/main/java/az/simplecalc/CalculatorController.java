@@ -55,9 +55,9 @@ public class CalculatorController {
                 }
             }
 
-            // If las character of expression is either a number or an operator, do not add the comma to the expression.
+            // If last character of expression is either a number or an operator, do not add the comma to the expression.
             char lastCharacterOfExpression = mCurrentStringExpression.charAt(mCurrentStringExpression.length() - 1);
-            if (validOperators.contains(lastCharacterOfExpression) || validNumbers.contains(lastCharacterOfExpression)) {
+            if (validOperators.contains(lastCharacterOfExpression)) {
                 isCommaAddedToExpression = true;
             }
         }
