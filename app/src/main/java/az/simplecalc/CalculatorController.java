@@ -74,8 +74,7 @@ public class CalculatorController {
 
         String stringResult;
 
-        //TODO: FIX ISSUE WITH SCI NOTATION
-        if (isValueInteger(doubleResult)) {
+        if (isValueInteger(doubleResult) && !isScientificNotation(Double.toString(doubleResult))) {
             int roundedValue = (int) Math.round(doubleResult);
             stringResult = String.valueOf(roundedValue);
         } else {
@@ -109,5 +108,15 @@ public class CalculatorController {
     private boolean isValueInteger(double number) {
         int roundedValue = (int) Math.round(number);
         return number % roundedValue == 0;
+    }
+
+    private boolean isScientificNotation(String numberString) {
+        try {
+            new BigDecimal(numberString);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+        return numberString.toUpperCase().contains("E");
     }
 }
