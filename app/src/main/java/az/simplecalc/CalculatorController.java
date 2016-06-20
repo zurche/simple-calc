@@ -12,8 +12,11 @@ import java.util.List;
 public class CalculatorController {
 
     private static final String STRING_COMMA = ".";
+    public static final String PERCENTAGE = "%";
     private List<Character> validOperators = Arrays.asList('+', '-', '/', '*');
     private List<Character> validNumbers = Arrays.asList('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+
+    private boolean isNumberPositive = true;
 
     private final CalculatorScreenActions mCalculatorScreenActions;
     private String mCurrentStringExpression;
@@ -24,10 +27,18 @@ public class CalculatorController {
         mCurrentStringExpression = "";
     }
 
+    public void onExpressionSignChange() {
+        mCurrentStringExpression = isNumberPositive ?
+                "-" + mCurrentStringExpression :
+                mCurrentStringExpression.substring(1, mCurrentStringExpression.length());
+        isNumberPositive = !isNumberPositive;
+        mCalculatorScreenActions.updateCurrentExpression(mCurrentStringExpression);
+    }
+
     public void onOperatorAdd(String value) {
         boolean isCommaAddedToExpression = false;
 
-        if (isValueAnOperator(value) && mCurrentStringExpression.length() > 0) {
+        if ((isValueAnOperator(value) || value.equals(PERCENTAGE)) && mCurrentStringExpression.length() > 0) {
             char lastCharacterOfExpression = mCurrentStringExpression.charAt(mCurrentStringExpression.length() - 1);
 
             if (isValueAnOperator(String.valueOf(lastCharacterOfExpression))) {
@@ -65,6 +76,8 @@ public class CalculatorController {
 
     public void onCalculateResult() {
         clearLastValueIfItIsAnOperator();
+
+        mCurrentStringExpression = mCurrentStringExpression.replaceAll(PERCENTAGE, "/100");
 
         Expression expression = new Expression(mCurrentStringExpression);
 

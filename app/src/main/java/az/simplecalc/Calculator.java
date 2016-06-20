@@ -127,6 +127,9 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
             case R.id.minus_button:
                 mCalculatorController.onOperatorAdd(getString(R.string.minus));
                 break;
+            case R.id.percentage_button:
+                mCalculatorController.onOperatorAdd(getString(R.string.percentage));
+                break;
             case R.id.comma_button:
                 mCalculatorController.onOperatorAdd(getString(R.string.comma_expression));
                 break;
@@ -135,6 +138,9 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
                 break;
             case R.id.equals_button:
                 mCalculatorController.onCalculateResult();
+                break;
+            case R.id.value_switch_button:
+                mCalculatorController.onExpressionSignChange();
                 break;
         }
     }
