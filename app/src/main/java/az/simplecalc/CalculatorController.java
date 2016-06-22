@@ -74,6 +74,7 @@ public class CalculatorController {
         mCalculatorScreenActions.showResult("");
     }
 
+    //TODO: FIX BUG WHEN NO EXPRESSION WAS ADDED AND EQUALS IS PRESSED
     public void onCalculateResult() {
         clearLastValueIfItIsAnOperator();
 

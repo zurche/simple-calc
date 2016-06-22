@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/equals_background"
+            android:background="@drawable/pad_item_selector"
             android:clickable="true"
             android:focusable="true">
 
@@ -74,7 +74,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/equals_background">
+            android:background="@drawable/pad_item_selector">
 
             <TextView
                 style="@style/PadOperator"
@@ -88,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/equals_background">
+            android:background="@drawable/pad_item_selector">
 
             <TextView
                 style="@style/PadOperator"
@@ -102,7 +102,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/operators_pad_background">
+            android:background="@drawable/operator_item_selector">
 
             <TextView
                 style="@style/PadOperator"
@@ -125,7 +125,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background"
+            android:background="@drawable/number_item_selector"
             android:clickable="true"
             android:focusable="true">
 
@@ -140,7 +140,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -153,7 +153,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -166,7 +166,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/operators_pad_background">
+            android:background="@drawable/operator_item_selector">
 
             <TextView
                 style="@style/PadOperator"
@@ -190,7 +190,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -203,7 +203,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -216,7 +216,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -229,7 +229,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/operators_pad_background">
+            android:background="@drawable/operator_item_selector">
 
             <TextView
                 style="@style/PadOperator"
@@ -252,7 +252,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -265,7 +265,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -278,7 +278,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -291,7 +291,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/operators_pad_background">
+            android:background="@drawable/operator_item_selector">
 
             <TextView
                 style="@style/PadOperator"
@@ -314,7 +314,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -327,7 +327,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/numbers_background">
+            android:background="@drawable/number_item_selector">
 
             <TextView
                 style="@style/PadItem"
@@ -340,7 +340,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:background="@color/equals_background">
+            android:background="@drawable/pad_item_selector">
 
             <TextView
                 style="@style/PadOperator"
