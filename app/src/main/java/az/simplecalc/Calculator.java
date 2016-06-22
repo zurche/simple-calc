@@ -1,15 +1,16 @@
 package az.simplecalc;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import az.simplecalc.util.FontsOverride;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Calculator extends AppCompatActivity implements CalculatorScreenActions {
 
@@ -64,11 +65,14 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        setupCustomFont();
-
         ButterKnife.bind(this);
 
         mCalculatorController = new CalculatorController(this);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @OnClick({R.id.zero_button,
@@ -140,13 +144,6 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
                 mCalculatorController.onExpressionSignChange();
                 break;
         }
-    }
-
-    private void setupCustomFont() {
-        FontsOverride.setDefaultFont(this, "DEFAULT", "Montserrat-Light.ttf");
-        FontsOverride.setDefaultFont(this, "MONOSPACE", "Montserrat-Light.ttf");
-        FontsOverride.setDefaultFont(this, "SERIF", "Montserrat-Light.ttf");
-        FontsOverride.setDefaultFont(this, "SANS_SERIF", "Montserrat-Light.ttf");
     }
 
     @Override

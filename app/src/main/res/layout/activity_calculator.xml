@@ -26,7 +26,8 @@
             tools:text="20 x 10 + 50"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            fontPath="fonts/Montserrat-Regular.ttf"/>
 
         <me.grantland.widget.AutofitTextView
             android:id="@+id/expression_result"
@@ -41,7 +42,8 @@
             tools:text="250"
             android:singleLine="true"
             android:maxLines="1"
-            autofit:minTextSize="30sp"/>
+            autofit:minTextSize="30sp"
+            fontPath="fonts/Montserrat-Regular.ttf"/>
 
     </RelativeLayout>
 
