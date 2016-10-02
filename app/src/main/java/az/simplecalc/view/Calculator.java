@@ -1,4 +1,4 @@
-package az.simplecalc;
+package az.simplecalc.view;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,13 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import az.simplecalc.R;
+import az.simplecalc.presenter.CalculatorPresenter;
+import az.simplecalc.presenter.CalculatorContract;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Calculator extends AppCompatActivity implements CalculatorScreenActions {
+public class Calculator extends AppCompatActivity implements CalculatorContract.View {
 
     @BindView(R.id.ac_button)
     RelativeLayout ac_button;
@@ -58,7 +62,7 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
     @BindView(R.id.expression_result)
     TextView expression_result;
 
-    private CalculatorController mCalculatorController;
+    private CalculatorPresenter mCalculatorPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +71,7 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
 
         ButterKnife.bind(this);
 
-        mCalculatorController = new CalculatorController(this);
+        mCalculatorPresenter = new CalculatorPresenter(this);
     }
 
     @Override
@@ -79,69 +83,67 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
             R.id.one_button, R.id.two_button, R.id.three_button,
             R.id.four_button, R.id.five_button, R.id.six_button,
             R.id.seven_button, R.id.eight_button, R.id.nine_button,
-            R.id.divide_button, R.id.multiply_button, R.id.minus_button, R.id.plus_button, R.id.percentage_button,
-            R.id.equals_button,
-            R.id.comma_button,
-            R.id.ac_button,
-            R.id.value_switch_button})
+            R.id.divide_button, R.id.multiply_button, R.id.minus_button,
+            R.id.plus_button, R.id.percentage_button, R.id.equals_button,
+            R.id.comma_button, R.id.ac_button, R.id.value_switch_button})
     void buttonClicked(View view) {
         switch (view.getId()) {
             case R.id.zero_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.zero));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.zero));
                 break;
             case R.id.one_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.one));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.one));
                 break;
             case R.id.two_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.two));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.two));
                 break;
             case R.id.three_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.three));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.three));
                 break;
             case R.id.four_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.four));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.four));
                 break;
             case R.id.five_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.five));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.five));
                 break;
             case R.id.six_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.six));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.six));
                 break;
             case R.id.seven_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.seven));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.seven));
                 break;
             case R.id.eight_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.eight));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.eight));
                 break;
             case R.id.nine_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.nine));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.nine));
                 break;
             case R.id.divide_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.divide_operator));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.divide_operator));
                 break;
             case R.id.multiply_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.multiply_expression));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.multiply_expression));
                 break;
             case R.id.plus_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.plus));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.plus));
                 break;
             case R.id.minus_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.minus));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.minus));
                 break;
             case R.id.percentage_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.percentage));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.percentage));
                 break;
             case R.id.comma_button:
-                mCalculatorController.onOperatorAdd(getString(R.string.comma_expression));
+                mCalculatorPresenter.onOperatorAdd(getString(R.string.comma_expression));
                 break;
             case R.id.ac_button:
-                mCalculatorController.onClearExpression();
+                mCalculatorPresenter.onClearExpression();
                 break;
             case R.id.equals_button:
-                mCalculatorController.onCalculateResult();
+                mCalculatorPresenter.onCalculateResult();
                 break;
             case R.id.value_switch_button:
-                mCalculatorController.onExpressionSignChange();
+                mCalculatorPresenter.onExpressionSignChange();
                 break;
         }
     }
@@ -154,5 +156,10 @@ public class Calculator extends AppCompatActivity implements CalculatorScreenAct
     @Override
     public void updateCurrentExpression(String currentStringExpression) {
         expression_field.setText(currentStringExpression);
+    }
+
+    @Override
+    public void showInvalidExpressionMessage() {
+        Toast.makeText(this, getString(R.string.invalid_expression_message), Toast.LENGTH_LONG).show();
     }
 }
