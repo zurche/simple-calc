@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/zurche/simple-calc/master/img/device-2016-06-14-085043.png" alt="Example App"/>
+  <img src="https://raw.githubusercontent.com/zurche/simple-calc/master/img/simple_calc_banner.png" alt="Example App"/>
 </p>
 
 # simple-calc
