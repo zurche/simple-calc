@@ -14,6 +14,7 @@ public class CalculatorPresenter implements CalculatorContract.Presenter{
     private static final String STRING_COMMA = ".";
     public static final String PERCENTAGE = "%";
     public static final String SCIENTIFIC_NOTATION_CHAR = "E";
+    public static final String INFINITY = "Infinity";
     private List<Character> validOperators = Arrays.asList('+', '-', '/', '*');
 
     private boolean isNumberPositive = true;
@@ -84,7 +85,7 @@ public class CalculatorPresenter implements CalculatorContract.Presenter{
 
     @Override
     public void onCalculateResult() {
-        if (mCurrentStringExpression.isEmpty()) {
+        if (mCurrentStringExpression.isEmpty() || mCurrentStringExpression.contains(INFINITY)) {
             view.showInvalidExpressionMessage();
         } else {
             clearLastValueIfItIsAnOperator();
