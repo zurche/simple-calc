@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/zurche/simple-calc/master/img/simple_calc_banner.png" alt="Example App"/>
 </p>
 
-[![](https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/clients/buttons/googleplay.png)](https://play.google.com/store/apps/details?id=az.simplecalc)
+*Not available in the store anymore, instead this version is up now: https://github.com/zurche/simple-calculator-v2
 
 # simple-calc
 A simple android calculator created in collaboration with the UI design of [Andrea Chiara De Santis](https://www.behance.net/andydesa) and the power of the [EvalEx](https://github.com/uklimaschewski/EvalEx) library created by [Udo Klimaschewski](https://github.com/uklimaschewski)
